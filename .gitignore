@@ -1,0 +1,6 @@
+machine_learning/yolo_dataset/
+
+machine_learning/runs/
+
+machine_learning/yolov8n.pt
+machine_learning/yolo11n.pt
