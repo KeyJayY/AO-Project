@@ -4,6 +4,9 @@ from PIL import Image, ImageTk, ImageDraw
 from ultralytics import YOLO
 import threading
 
+MAX_TARGET_WIDTH = 600
+MAX_TARGET_HEIGHT = 400
+
 
 class LicensePlateReader:
     def __init__(self, root):
@@ -45,32 +48,45 @@ class LicensePlateReader:
         self.clear_button.pack(pady=5)
 
     def find_plate_numbers(self, image_path):
-
         results = self.model(image_path)
-
         image = Image.open(image_path).convert("RGB")
         draw = ImageDraw.Draw(image)
+
+        cropped_plates = []
 
         for box in results[0].boxes:
             x_min, y_min, x_max, y_max = map(int, box.xyxy[0].tolist())
             confidence = box.conf.item()
+
             draw.rectangle([x_min, y_min, x_max, y_max], outline="green", width=2)
             text = f"Conf: {confidence:.2f}"
-
             text_bbox = draw.textbbox((x_min, y_min), text)
             text_width = text_bbox[2] - text_bbox[0]
             text_height = text_bbox[3] - text_bbox[1]
-
             text_position = (x_min, y_min - text_height)
-
             draw.rectangle(
                 [text_position, (x_min + text_width, y_min)],
                 fill="green",
             )
-
             draw.text(text_position, text, fill="white")
 
+            cropped_plate = image.crop((x_min, y_min, x_max, y_max))
+            cropped_plates.append(cropped_plate)
+
+        for cropped_plate in cropped_plates:
+            self.display_plate_window(cropped_plate)
+
         return image
+
+    def display_plate_window(self, cropped_plate):
+        new_window = tk.Toplevel(self.root)
+        new_window.title("Wycięta tablica rejestracyjna")
+
+        cropped_plate_tk = ImageTk.PhotoImage(cropped_plate)
+
+        label = tk.Label(new_window, image=cropped_plate_tk)
+        label.image = cropped_plate_tk
+        label.pack(pady=10, padx=10)
 
     def upload_image(self):
         file_path = filedialog.askopenfilename(
@@ -83,6 +99,8 @@ class LicensePlateReader:
     def process_image(self, file_path):
         self.image_label.config(text="Przetwarzanie...", bg="yellow")
         image = self.find_plate_numbers(file_path)
+
+        image.thumbnail((MAX_TARGET_WIDTH, MAX_TARGET_HEIGHT))
 
         self.image_tk = ImageTk.PhotoImage(image)
         self.image_label.config(image=self.image_tk, text="", bg="white")
