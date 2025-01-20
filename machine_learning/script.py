@@ -10,6 +10,7 @@ def prepare_yolo_dataset():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     dataset_dir = os.path.join(base_dir, "yolo_dataset")
 
+    # https://huggingface.co/datasets/keremberke/license-plate-object-detection
     dataset = load_dataset("keremberke/license-plate-object-detection", "full")
 
     os.makedirs(os.path.join(dataset_dir, "images/train"), exist_ok=True)
