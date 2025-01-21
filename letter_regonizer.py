@@ -2,6 +2,9 @@ import cv2
 from ultralytics import YOLO
 import numpy as np
 from tensorflow.keras.models import load_model
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # Używanie tylko CPU
 
 # Wczytanie modeli YOLO i klasyfikatora liter
 model_path = "model/best.pt"

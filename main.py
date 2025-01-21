@@ -4,6 +4,10 @@ import cv2
 from ultralytics import YOLO
 import threading
 from letter_regonizer import recognize_letters
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # Używanie tylko CPU
+
 
 MAX_TARGET_WIDTH = 600
 MAX_TARGET_HEIGHT = 400
