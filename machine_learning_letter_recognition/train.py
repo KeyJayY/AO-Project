@@ -14,7 +14,7 @@ DATASET_DIR = "letters"
 DATASET_DIR2 = "CNN_letter_dataset"
 IMG_SIZE = (64, 64)
 BATCH_SIZE = 32
-EPOCHS = 15
+EPOCHS = 10
 
 
 import cv2
@@ -55,6 +55,7 @@ def load_dataset(dataset_dir=DATASET_DIR, dataset_dir2=DATASET_DIR2):
     labels = []
     class_names = sorted(os.listdir(dataset_dir))
     for label, class_name in enumerate(class_names):
+        print(label)
         class_dir = os.path.join(dataset_dir, class_name)
         for filename in os.listdir(class_dir):
             file_path = os.path.join(class_dir, filename)
@@ -137,6 +138,7 @@ plt.plot(history.history["val_accuracy"], label="Dokładność walidacyjna")
 plt.xlabel("Epoka")
 plt.ylabel("Dokładność")
 plt.legend()
+plt.savefig("accuracy.png")
 plt.show()
 
 model.save("letter_recognition_model.h5")
