@@ -42,17 +42,13 @@
 
 # **9. Wykorzystane technologie**
    9.1. Języki programowania  
-   9.2. Biblioteki i frameworki (TensorFlow, PyTorch, OpenCV)  
+   9.2. Biblioteki i frameworki 
    9.3. Narzędzia wspomagające rozwój  
 
 # **10. Problemy i wyzwania**
-   10.1. Napotkane trudności  
+   10.1. Napotkane trudności (co nie działa)
    10.2. Potencjalne ulepszenia  
 
 # **11. Podsumowanie**
    11.1. Wnioski końcowe  
-   11.2. Możliwości rozwoju projektu  
-   
-# **12. Załączniki**
-   12.1. Przykładowe wyniki działania aplikacji  
-   12.2. Struktura kodu źródłowego
+   11.2. Kto co robił
