@@ -25,6 +25,7 @@ Aby uruchomić projekt, należy wykonać następujące kroki:
    ./skrypt.sh
    ```
    Skrypt ten automatycznie instaluje wymagane zależności, przygotowuje dane i uruchamia aplikację.
+Alternatywnie można samodzielnie zainstalować potrzebne biblioteki zamieszczone w pliku requirements.txt, po zainstalowaniu uruchomić można skrypt main.py
 
 # **4. Generowanie zestawu danych**
 Plik **`create_dataset.py`** odpowiada za generowanie obrazów liter na podstawie różnych czcionek. Proces ten obejmuje:
