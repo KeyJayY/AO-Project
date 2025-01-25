@@ -30,10 +30,10 @@ Projekt składa się z następujących plików i katalogów:
 # **4. Generowanie zestawu danych**
 Plik **`create_dataset.py`** odpowiada za generowanie obrazów liter na podstawie różnych czcionek. Proces ten obejmuje:
 - Wybór czcionek z folderu `fonts/`
-- Generowanie obrazów z literami od A do Z
+- Generowanie obrazów z literami od A do Z oraz cyfry od 0 do 9
 - Zapisywanie danych w odpowiednim formacie do treningu sieci neuronowej.
 
-# **5. Trenowanie modelu**
+# **5. Trenowanie modelu rozpoznawania znaków**
 Plik **`train.py`** obsługuje proces trenowania modelu. Główne kroki obejmują:
 - Wczytanie wygenerowanego zbioru danych.
 - Budowanie modelu sieci neuronowej.
@@ -53,7 +53,7 @@ Plik **`main.py`** to główny punkt wejścia do aplikacji. Umożliwia wprowadze
 Projekt wymaga:
 - Python 3.8 lub wyższy
 - Biblioteki instalowane poprzez skrypt `skrypt.sh`, m.in.:
-  - TensorFlow / PyTorch
+  - TensorFlow
   - OpenCV
   - NumPy
   - Matplotlib
