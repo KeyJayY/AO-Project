@@ -19,13 +19,13 @@ Projekt składa się z następujących plików i katalogów:
 - **`letter_recognition_model.h5`** – Model zapisany w formacie Keras.
 
 # **3. Instalacja**
-Aby uruchomić projekt, należy wykonać następujące kroki:
-1. Uruchomić skrypt instalacyjny:
-   ```bash
-   ./skrypt.sh
-   ```
-   Skrypt ten automatycznie instaluje wymagane zależności, przygotowuje dane i uruchamia aplikację.
-Alternatywnie można samodzielnie zainstalować potrzebne biblioteki zamieszczone w pliku requirements.txt, po zainstalowaniu uruchomić można skrypt main.py
+- Aby uruchomić projekt, należy wykonać następujące kroki:
+   1. Uruchomić skrypt instalacyjny:
+      ```bash
+      ./skrypt.sh
+      ```
+      Skrypt ten automatycznie instaluje wymagane zależności, przygotowuje dane i uruchamia aplikację.
+- Alternatywnie można samodzielnie zainstalować potrzebne biblioteki zamieszczone w pliku requirements.txt, po zainstalowaniu uruchomić można skrypt main.py
 
 # **4. Generowanie zestawu danych**
 Plik **`create_dataset.py`** odpowiada za generowanie obrazów liter na podstawie różnych czcionek. Proces ten obejmuje:
