@@ -51,7 +51,7 @@ Plik **`main.py`** to główny punkt wejścia do aplikacji. Umożliwia wprowadze
 
 # **8. Wymagania systemowe**
 Projekt wymaga:
-- Python 3.8 lub wyższy
+- Python >=3.8, <=3.11 (tensorflow nie działa jeszcze na nowszych wersjach) 
 - Biblioteki instalowane poprzez skrypt `skrypt.sh`, m.in.:
   - TensorFlow
   - OpenCV
