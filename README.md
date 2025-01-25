@@ -9,14 +9,14 @@ Projekt składa się z następujących plików i katalogów:
 - **`README.md`** – Dokumentacja opisująca projekt.
 - **`skrypt.sh`** – Skrypt automatyzujący instalację zależności i uruchamianie programu.
 - **`images/`** – Folder zawierający przykładowe obrazy do testowania modelu.
-- **`train.py`** – Skrypt do trenowania modelu rozpoznawania liter.
+- **`machine_learning_letter_recognition/train.py`** – Skrypt do trenowania modelu rozpoznawania liter.
+- **`machine_learning/script.py`** – Skrypt do trenowania modelu detekcji tablic rejestracyjnych.
 - **`create_dataset.py`** – Skrypt generujący zestaw danych na podstawie różnych czcionek.
 - **`test_model.py`** – Skrypt testujący model na nowych danych.
 - **`main.py`** – Główny skrypt do uruchamiania aplikacji.
 - **`letter_regonizer.py`** – Moduł odpowiedzialny za ładowanie modelu i przetwarzanie danych wejściowych.
-- **`script.py`** – Skrypt wspomagający działanie różnych części programu.
-- **`best.pt`** – Plik zapisujący najlepszy wytrenowany model w formacie PyTorch.
-- **`letter_recognition_model.h5`** – Model zapisany w formacie Keras.
+- **`best.pt`** – Plik zapisujący najlepszy wytrenowany model detekcji tablic rejestracyjnych w formacie PyTorch.
+- **`letter_recognition_model.h5`** – Model rozpoznawania znaków zapisany w formacie Keras.
 
 # **3. Instalacja**
 - Aby uruchomić projekt, należy wykonać następujące kroki:
