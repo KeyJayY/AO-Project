@@ -50,7 +50,9 @@ class LicensePlateReader:
         )
         self.result_label.pack(pady=10)
 
-        self.result_text = tk.Text(self.root, height=3, width=50, font=("Arial", 14))
+        self.result_text = tk.Text(
+            self.root, height=3, width=50, font=("Arial", 14), state="disabled"
+        )
         self.result_text.pack(pady=10)
 
         self.clear_button = tk.Button(
@@ -113,7 +115,7 @@ class LicensePlateReader:
         Obsługuje wybór pliku przez użytkownika i uruchamia proces przetwarzania obrazu.
         """
         file_path = filedialog.askopenfilename(
-            filetypes=[("Image Files", "*.png;*.jpg;*.jpeg;*.bmp")]
+            filetypes=[("Image Files", "*.png *.jpg *.jpeg *.bmp")]
         )
         if file_path:
             thread = threading.Thread(target=self.process_file, args=(file_path,))
@@ -139,8 +141,10 @@ class LicensePlateReader:
         self.image_label.config(image=resized_image_tk, text="", bg="white")
         self.image_label.image = resized_image_tk
 
+        self.result_text.config(state="normal")
         self.result_text.delete("1.0", tk.END)
         self.result_text.insert(tk.END, characters)
+        self.result_text.config(state="disabled")
 
     def convert_to_tkinter_image(self, cv_image):
         """
